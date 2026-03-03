@@ -7,15 +7,19 @@ export default defineConfig((config) => ({
   plugins: [
     reactRouter(),
     tsconfigPaths(),
-    sentryReactRouter(
-      {
-        org: process.env.SENTRY_ORG ?? "t.ishiguro",
-        project: process.env.SENTRY_PROJECT ?? "MBO-2025-early",
-        authToken: process.env.SENTRY_AUTH_TOKEN,
-        telemetry: false,
-      },
-      config,
-    ),
+    process.env.SENTRY_AUTH_TOKEN
+      ? [
+          sentryReactRouter(
+            {
+              org: process.env.SENTRY_ORG ?? "t.ishiguro",
+              project: process.env.SENTRY_PROJECT ?? "MBO-2025-early",
+              authToken: process.env.SENTRY_AUTH_TOKEN,
+              telemetry: false,
+            },
+            config,
+          ),
+        ]
+      : [],
   ],
   server: {
     port: 3112,
