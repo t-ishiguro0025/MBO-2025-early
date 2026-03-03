@@ -1,17 +1,30 @@
 {
   "dependencies": {
     "@react-router/dev": "^7.13.1",
+    "@react-router/node": "^7.13.1",
     "@sentry/react-router": "^10.39.0",
+    "react": "^19.2.4",
+    "react-dom": "^19.2.4",
     "react-router": "^7.13.1",
-    "vitest": "^4.0.18",
-    "zod": "^4.3.6"
+    "zod": "^4.3.6",
+    "isbot": "^5"
   },
   "scripts": {
+    "dev": "react-router dev",
     "test": "npx vitest run"
   },
   "devDependencies": {
+    "@types/react": "^19.2.14",
+    "@types/react-dom": "^19.2.3",
     "@vitest/browser-playwright": "^4.0.18",
     "jsdom": "^28.1.0",
-    "vite-tsconfig-paths": "^6.1.1"
+    "msw": "^2.12.10",
+    "vite-tsconfig-paths": "^6.1.1",
+    "vitest": "^4.0.18"
+  },
+  "msw": {
+    "workerDirectory": [
+      "public"
+    ]
   }
 }
