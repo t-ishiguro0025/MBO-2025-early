@@ -1,4 +1,3 @@
-
 AI の出力した下記設計をもとに、AIを使わずに実装・学習を行い自走する力をつける
 
 # Phase 1 設計仕様書 — StudyLog（学習記録アプリ）
@@ -393,6 +392,30 @@ ErrorState
 ```
 Week 1: ① ログイン画面
          → zod / フォーム / API 通信 / エラーハンドリングの基礎を掴む
+
+  1. loginSchema（zod）
+     → バリデーションルールと LoginInput 型を先に定義し、実装の土台を作る
+
+  2. MSW（POST /api/auth/login のモック）
+     → 成功・失敗ケースを手元で再現できるよう通信基盤を先に用意する
+
+  3. EmailField / PasswordField
+     → LoginForm が props を渡す先を先に作る
+       PasswordField は表示/非表示の切り替えボタンも含む
+
+  4. ApiErrorAlert
+     → apiError が null のときは非表示、値があるときだけ表示する
+
+  5. SubmitButton
+     → isLoading を受け取り disabled + スピナー表示を担う
+
+  6. LoginForm
+     → 子コンポーネントが揃った後に実装
+       状態管理・バリデーション・API通信・子への props 受け渡しをまとめる
+
+  7. LoginPage
+     → LoginForm を配置するだけ
+       ログイン済みの場合に /logs へリダイレクトするガード処理もここに書く（UC-04）
 
 Week 2: ④ エラー / 空状態コンポーネント（先に作る）
          → 一覧・詳細で使い回すため先行実装しておく
