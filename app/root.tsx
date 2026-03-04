@@ -1,4 +1,5 @@
-import { Outlet, Scripts, ScrollRestoration } from 'react-router';
+import { Outlet, Scripts, ScrollRestoration } from "react-router";
+import { MantineProvider } from "@/shared/providers/MantineProvider";
 
 export default function Root() {
   return (
@@ -8,7 +9,9 @@ export default function Root() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </head>
       <body>
-        <Outlet />
+        <MantineProvider>
+          <Outlet />
+        </MantineProvider>
         <ScrollRestoration />
         <Scripts />
       </body>
