@@ -1,8 +1,9 @@
 import { PasswordInput } from "@mantine/core";
+import type { ChangeEvent } from "react";
 
 type Props = {
   value: string;
-  onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  onChange: (event: ChangeEvent<HTMLInputElement>) => void;
   error?: string;
 };
 
@@ -14,6 +15,8 @@ export function PasswordField({ value, onChange, error }: Props) {
       value={value}
       onChange={onChange}
       error={error}
+      name="password"
+      autoComplete="current-password"
     />
   );
 }

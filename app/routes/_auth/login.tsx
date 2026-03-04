@@ -1,3 +1,11 @@
+import { EmailField } from "@/features/auth";
+import { PasswordField } from "@/features/auth";
+
 export default function LoginPage() {
-  return <div>ログイン画面</div>;
+  return (
+    <div>
+      <EmailField value="" onChange={() => {}} />
+      <PasswordField value="" onChange={() => {}} />
+    </div>
+  );
 }

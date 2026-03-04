@@ -1,9 +1,10 @@
 import "@mantine/core/styles.css";
 
 import { MantineProvider as BaseMantineProvider } from "@mantine/core";
+import type { ReactNode } from "react";
 
 type Props = {
-  children: React.ReactNode;
+  children: ReactNode;
 };
 
 export function MantineProvider({ children }: Props) {
