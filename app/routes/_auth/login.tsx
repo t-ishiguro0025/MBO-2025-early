@@ -1,11 +1,14 @@
-import { EmailField } from "@/features/auth";
-import { PasswordField } from "@/features/auth";
+import { LoginForm } from "@/features/auth";
 
 export default function LoginPage() {
   return (
-    <div>
-      <EmailField value="" onChange={() => {}} />
-      <PasswordField value="" onChange={() => {}} />
-    </div>
+    <LoginForm
+      formValue={{ email: "", password: "" }}
+      isLoading={false}
+      apiError={undefined}
+      fieldErrors={{}}
+      onEmailChange={() => {}}
+      onPasswordChange={() => {}}
+    />
   );
 }
