@@ -1,1 +1,1 @@
-export { LoginForm } from "./components/presentational/LoginForm";
+export { LoginFormContainer } from "./components/containers/LoginFormContainer";
