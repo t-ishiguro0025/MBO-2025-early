@@ -1,7 +1,7 @@
 import { Box, Container, Stack } from "@mantine/core";
 import { Outlet } from "react-router";
 
-export default function AuthLayout() {
+export default function AppLayout() {
   return (
     <>
       <title>StudyLog</title>
