@@ -6,8 +6,8 @@ export default function AuthLayout() {
     <>
       <title>StudyLog</title>
       <Box bg="dark.7" mih="100vh">
-        <Container size="lg" py="md">
-          <Stack gap="md" align="center" justify="center" h="100%" w="100%">
+        <Container size="lg" py="md" h="100vh">
+          <Stack gap="md" justify="center" h="100%" w="100%">
             <Outlet />
           </Stack>
         </Container>
