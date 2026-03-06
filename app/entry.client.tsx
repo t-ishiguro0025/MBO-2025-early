@@ -3,16 +3,19 @@ import { hydrateRoot } from 'react-dom/client';
 import { HydratedRouter } from 'react-router/dom';
 
 async function prepare() {
-  if (import.meta.env.DEV) {
-    const { worker } = await import('./shared/mocks/browser/worker');
-    await worker.start({ onUnhandledRequest: 'bypass' });
-  }
+  const { worker } = await import('./shared/mocks/browser/worker');
+  await worker.start({
+    onUnhandledRequest: 'bypass',
+    serviceWorker: {
+      url: '/mockServiceWorker.js',
+    },
+  });
+  console.log('[MSW] Worker started');
 }
+
 prepare()
   .catch((error) => {
-    if (import.meta.env.DEV) {
-      console.error('Failed to start MSW worker. Continuing without mocks.', error);
-    }
+    console.error('[MSW] Failed to start worker:', error);
   })
   .then(() => {
     startTransition(() => {
