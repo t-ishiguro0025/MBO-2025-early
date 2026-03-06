@@ -1,3 +1,4 @@
+import "@mantine/core/styles.css";
 import { Outlet, Scripts, ScrollRestoration } from "react-router";
 import { MantineProvider } from "@/shared/providers/MantineProvider";
 
